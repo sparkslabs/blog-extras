@@ -6,7 +6,7 @@ class Generator {
   protected:
     int __generator_state;
   public:
-    Generator()  {     };
+    Generator()  {  __generator_state = 0;   };
     ~Generator() {     };
 };
 
