@@ -9,16 +9,21 @@ simple_generator<int> fib(int max) {
         b = n;
     }
 }
+long count = 0;
 
 void timeFibonnaci() {
     auto a = fib(22);
+    int result=0;
     for(int j=0; j<22; j++) {
         if (a.running()) {
             a.try_next();
             if (a.running()) {
-                a.take();
+                result = a.take();
             }
         }
+    }
+    if (result == 17711) {
+        count++;
     }
 }
 int main(int, char **) {

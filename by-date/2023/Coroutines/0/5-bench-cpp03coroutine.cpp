@@ -17,16 +17,23 @@ public:
     };
 };
 
+long count = 0;
+
 void timeFibonnaci() {
     Fibonnaci a;
+    int result;
     for(int j=0; j<22; j++) {
         try {
-            a.next();
+            result = a.next();
         } catch(StopIteration null){
             std::cout << " Exception Caught" << "...\n";
             break;
         }
     };
+    if (result == 17711) {
+        count++;
+    }
+
 }
 
 int main(int, char **) {

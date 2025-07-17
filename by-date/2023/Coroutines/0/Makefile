@@ -14,7 +14,7 @@ help:
 	@echo "help - this help"
 
 cpp03coro:
-	g++ 3-cpp03coroutine.cpp -o cpp03coro
+	g++ -Os 3-cpp03coroutine.cpp -o cpp03coro
 
 cpp20coro:
 	g++ -g -O0 -Wall -Werror -Wextra -std=c++20  -fcoroutines  4-cpp20coroutine.cpp -o cpp20coro
@@ -34,14 +34,14 @@ clean:
 
 
 bench-cpp03coroutine:
-	g++ -g -O0 -Wall -Werror -Wextra -std=c++20  -fcoroutines 5-bench-cpp03coroutine.cpp -o bench-cpp03coroutine
+	g++ -g -O3 -Wall -Werror -Wextra -std=c++20  -fcoroutines 5-bench-cpp03coroutine.cpp -o bench-cpp03coroutine
 
 run-03-bench: bench-cpp03coroutine
 	time ./bench-cpp03coroutine
 
 
 bench-cpp20coroutine:
-	g++ -g -O0 -Wall -Werror -Wextra -std=c++20  -fcoroutines 6-bench-cpp20coroutine.cpp -o bench-cpp20coroutine
+	g++ -g -Os -Wall -Werror -Wextra -std=c++20  -fcoroutines 6-bench-cpp20coroutine.cpp -o bench-cpp20coroutine
 
 run-20-bench: bench-cpp20coroutine
 	time ./bench-cpp20coroutine
