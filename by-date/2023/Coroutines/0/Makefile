@@ -36,6 +36,10 @@ clean:
 bench-cpp03coroutine:
 	g++ -g -O3 -Wall -Werror -Wextra -std=c++20  -fcoroutines 5-bench-cpp03coroutine.cpp -o bench-cpp03coroutine
 
+bench-cpp03coroutine.s:
+	g++ -g -O3 -Wall -Werror -Wextra -std=c++20  -fcoroutines -fverbose-asm 5-bench-cpp03coroutine.cpp -o bench-cpp03coroutine -save-temps -v
+	nl bench-cpp03coroutine-5-bench-cpp03coroutine.s > nl-bench-cpp03coroutine-5-bench-cpp03coroutine.s
+
 run-03-bench: bench-cpp03coroutine
 	time ./bench-cpp03coroutine
 
